@@ -1,0 +1,128 @@
+@johnson
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #160345;
+  overflow: hidden;
+}
+
+#calculator {
+  width: 100vw;
+  height: 100vh;
+  background: #1a3a6e;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Display area ── */
+.top {
+  padding: 24px 28px 14px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.25);
+}
+
+.top span.clear {
+  align-self: flex-start;
+  cursor: pointer;
+  color: #f82626;
+  font-size: clamp(14px, 2vw, 20px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background 0.1s;
+  user-select: none;
+}
+
+.top span.clear:hover {
+  background: rgba(255,124,135,0.2);
+}
+
+.top .input {
+  color: #fff;
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 200;
+  text-align: right;
+  letter-spacing: 1px;
+  min-height: 1.5em;
+  word-break: break-all;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* ── Keys area — fills all remaining screen space ── */
+.keys {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: clamp(10px, 2vw, 24px);
+  padding: clamp(12px, 2.5vw, 28px);
+}
+
+/* ── Every button — square shape ── */
+.keys span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: clamp(30px, 3vw, 36px);
+  font-weight: 400;
+  user-select: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  transition: transform 0.1s ease, background 0.1s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.keys span:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: scale(1.04);
+}
+
+.keys span:active {
+  transform: scale(0.95);
+  background: rgba(255,255,255,0.08);
+}
+
+/* ── Operator buttons ── */
+.keys span.operator {
+  background: rgba(100, 160, 255, 0.25);
+  color: #90c8ff;
+  border-color: rgba(100,160,255,0.3);
+}
+
+.keys span.operator:hover {
+  background: rgba(100, 160, 255, 0.4);
+}
+
+/* ── Equals button ── */
+.keys span.equals {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  border-color: #3b82f6;
+  box-shadow: 0 4px 20px rgba(37,99,235,0.5);
+  font-size: clamp(20px, 3.5vw, 40px);
+}
+
+.keys span.equals:hover {
+  background: linear-gradient(135deg, #21cf2f, #02380c);
+  transform: scale(1.05);
+}
